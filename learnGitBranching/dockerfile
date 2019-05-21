@@ -1,0 +1,19 @@
+FROM nginx:latest
+
+RUN apt-get update \
+    && apt-get -y install curl \
+    && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
+    && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -   \
+    && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list    \
+    && apt-get update  \
+    && apt-get -y install git \
+    && apt-get -y install yarn    \
+    && apt-get -y install nodejs  \
+    && npm install -g grunt-cli    \
+    && cd /home    \
+    && git clone https://github.com/pcottle/learnGitBranching.git  \
+    && cd learnGitBranching    \
+    && yarn install    \
+    && yarn grunt fastBuild    \
+    && mv /usr/share/nginx/html/index.html /usr/share/nginx/html/index.html.old  \
+    && ln /home/learnGitBranching/index.html /usr/share/nginx/html/index.html
