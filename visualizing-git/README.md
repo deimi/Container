@@ -1,6 +1,6 @@
-# visualize-git container
+# visualizing-git container
 
-A little docker container for running a local instance of visualize-git (http://git-school.github.io/visualizing-git/). \
+A little docker container for running a local instance of visualizing-git (http://git-school.github.io/visualizing-git/). \
 Very useful for offline learning without internet connection (e.g. in planes)
 
 
@@ -11,7 +11,7 @@ Use plain docker commands or script to start container.
 
 
 Call script with argument: \
-    install   ... creates visualize-git container \
+    install   ... creates visualizing-git container \
     start     ... start container \
     stop      ... stop container \
     uninstall ... removes container and image 
