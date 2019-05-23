@@ -7,7 +7,7 @@ readonly PORT="12345"
 case ${1} in
     "install")
         docker build -t ${IMAGE_NAME}:latest .
-        docker create -p ${PORT}:80 --restart unless-stopped --name ${CONTAINER_NAME} ${IMAGE_NAME}
+        docker create -p ${PORT}:80 --name ${CONTAINER_NAME} ${IMAGE_NAME}
         ;;
 
     "start")
